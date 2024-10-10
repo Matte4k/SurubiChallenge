@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float playerSpeed = 5f;
-    private float horizontalSpeed = 8f;
+    private float playerSpeed = 10f;
+    private float horizontalSpeed = 12f;
     private float rightLimit = 4f;
     private float leftLimit = -3.9f; //kaiba was here
 
