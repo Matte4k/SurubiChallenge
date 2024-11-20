@@ -3,6 +3,7 @@ using UnityEngine;
 public class DayNightCycle : MonoBehaviour
 {
     public Light sunLight; // Sunlight (Directional Light)
+    public Light moonLight; // MoonLight (Directional Light)
 
     public float dayDuration = 30f; // Duration of day in seconds
     public float nightDuration = 15f; // Duration of night in seconds
@@ -12,6 +13,7 @@ public class DayNightCycle : MonoBehaviour
     public Gradient skyColor; // Gradient for sky colors during day and night
     public Gradient fogColor; // Gradient for fog colors during day and night
     public AnimationCurve sunIntensityCurve; // Intensity curve for the sun
+    public AnimationCurve moonIntensityCurve; // Intensity curve for the sun
     public AnimationCurve exposureCurve; // Curve for smoother skybox exposure transitions
 
     private float dayNightSpeed; // Speed of time progression
@@ -54,12 +56,17 @@ public class DayNightCycle : MonoBehaviour
     {
         float sunAngle = (timeOfDay / 24f) * 360f - 90f; // Rotate the sun (0-24 hour range)
         sunLight.transform.rotation = Quaternion.Euler(new Vector3(sunAngle, -30f, 0f));
+
+        float moonAngle = (timeOfDay / 24f) * 360f + 90f; // Rotate the moon (opposite of the sun)
+        moonLight.transform.rotation = Quaternion.Euler(new Vector3(moonAngle, -30f, 0f));
     }
 
     // Adjust the intensities of sun and moon based on time of day
     private void AdjustSunAndMoonIntensity()
     {
         sunLight.intensity = sunIntensityCurve.Evaluate(timeOfDay / 24f); // Adjust sun intensity
+
+        moonLight.intensity = moonIntensityCurve.Evaluate(timeOfDay / 24f); // Adjust moon intensity
     }
 
     // Blend between day and night skyboxes smoothly
