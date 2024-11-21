@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LifeSystem : MonoBehaviour
 {
-    public GameObject thePlayer, theCamera, playerHitbox;
+    public GameObject thePlayer, theCamera, playerHitbox, gameManager;
     public GameObject hitParticles, damage1, damage2, boatParticles;
     private int hitCount;
     public AudioSource hits;
@@ -15,7 +15,7 @@ public class LifeSystem : MonoBehaviour
     {
         hitCount = 0;
         soundFlag = false;
-
+        gameManager.GetComponent<IncreaseGameSpeed>().enabled = true;
         if (damage1 != null)
         {
             damage1.SetActive(false);
@@ -65,6 +65,8 @@ public class LifeSystem : MonoBehaviour
                 {
                     hits.PlayOneShot(gameOver);
                 }
+                Time.timeScale = 0;
+                gameManager.GetComponent<IncreaseGameSpeed>().enabled = false;
                 break;
             default:
                 break;
