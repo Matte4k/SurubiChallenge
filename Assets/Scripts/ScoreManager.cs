@@ -40,4 +40,14 @@ public class ScoreManager : MonoBehaviour
         score += 10;
         coinCount++;
     }
+
+    public int getScore()
+    {
+        return this.score;
+    }
+
+    public int getCoinCount()
+    {
+        return this.coinCount;
+    }
 }
