@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
     public GameObject fadeIn, fadeOut;
+    public LifeSystem lifeSystem;
     // Start is called before the first frame update
     void Start()
     {
         fadeIn.SetActive(false);
-
         fadeOut.SetActive(false);
         fadeOut.SetActive(true);
     }
@@ -18,7 +18,10 @@ public class ScenesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (lifeSystem.getHitCount() == 3)
+        {
+            fadeOut.SetActive(false);
+        }
     }
 
     public void Reset()

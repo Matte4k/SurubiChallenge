@@ -21,6 +21,7 @@ public class LifeSystem : MonoBehaviour
         soundFlag = false;
         gameManager.GetComponent<SpawnSegment>().enabled = true;
         gameManager.GetComponent<IncreaseGameSpeed>().enabled = true;
+        gameManager.GetComponent<DayNightCycle>().enabled = true;
         if (damage1 != null)
         {
             damage1.SetActive(false);
@@ -78,6 +79,8 @@ public class LifeSystem : MonoBehaviour
                 life1.sprite = lostLife;
                 gameManager.GetComponent<IncreaseGameSpeed>().enabled = false;
                 gameManager.GetComponent<SpawnSegment>().enabled = false;
+                gameManager.GetComponent<DayNightCycle>().enabled = false;
+                Time.timeScale = 1;
                 gameOverClass.ShowScreen();
                 break;
             default:
@@ -103,5 +106,10 @@ public class LifeSystem : MonoBehaviour
         playerHitbox.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         playerHitbox.SetActive(true);
+    }
+
+    public int getHitCount()
+    {
+        return this.hitCount;
     }
 }

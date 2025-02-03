@@ -660,7 +660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!328 &964016432
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -769,7 +769,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8600000, guid: 17256769a2ba57d40a6707fdb12e8079, type: 2}
+  m_Texture: {fileID: 2800000, guid: 5947fe92077701e4082c18da882174b8, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -950,6 +950,7 @@ GameObject:
   - component: {fileID: 1741796556}
   - component: {fileID: 1741796558}
   - component: {fileID: 1741796557}
+  - component: {fileID: 1741796559}
   m_Layer: 5
   m_Name: PlayText
   m_TagString: Untagged
@@ -1074,6 +1075,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741796555}
   m_CullTransparentMesh: 1
+--- !u!95 &1741796559
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741796555}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a875263e8ff84c845ad7d618ab992743, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1776407643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,6 +1106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1776407644}
   - component: {fileID: 1776407645}
+  - component: {fileID: 1776407646}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -1120,6 +1143,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeIn: {fileID: 379140634}
   fadeOut: {fileID: 1609696709}
+  lifeSystem: {fileID: 1776407646}
+--- !u!114 &1776407646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776407643}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134e59cadc6b1d548abb8a83c85f0536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePlayer: {fileID: 0}
+  theCamera: {fileID: 0}
+  playerHitbox: {fileID: 0}
+  gameManager: {fileID: 0}
+  hitParticles: {fileID: 0}
+  damage1: {fileID: 0}
+  damage2: {fileID: 0}
+  boatParticles: {fileID: 0}
+  life1: {fileID: 0}
+  life2: {fileID: 0}
+  life3: {fileID: 0}
+  fullLife: {fileID: 0}
+  lostLife: {fileID: 0}
+  hits: {fileID: 0}
+  hit: {fileID: 0}
+  gameOver: {fileID: 0}
+  gameOverClass: {fileID: 0}
 --- !u!1 &2080682990
 GameObject:
   m_ObjectHideFlags: 0
